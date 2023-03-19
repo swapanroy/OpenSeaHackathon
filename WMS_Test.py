@@ -1,5 +1,4 @@
 
-
  #from owslib.wfs import WebFeatureService
 #wfs = WebFeatureService(url='https://geo.vliz.be/geoserver/Emodnetbio/wfs', version='2.0.0')
 
@@ -21,9 +20,14 @@ print(dataset.boundingBoxWGS84)
 print([op.name for op in wms.operations])
 print(wms.getOperationByName('GetMap').methods)
 print(wms.getOperationByName('GetMap').formatOptions)
-print(dataset.crsOptionsa)
+print(dataset.crsOptions)
 print(dataset.styles)
-print(dataset.dimensions) #Get's time and Elevation 
+print("Dimensions",list(dataset.dimensions)) #Get's time and Elevation 
+
+#Print time and Elevation value
+for keys,values in dataset.dimensions.items():
+    print(keys)
+    print(values)
 
 
 
