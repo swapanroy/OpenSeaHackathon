@@ -1,12 +1,40 @@
+
+
+ #from owslib.wfs import WebFeatureService
+#wfs = WebFeatureService(url='https://geo.vliz.be/geoserver/Emodnetbio/wfs', version='2.0.0')
+
 from owslib.wms import WebMapService
+import xml.etree.ElementTree as ET 
+import pandas as pd 
+import os
 
-wms = WebMapService(url='https://nodc.ogs.it/geoserver/Contaminants/wms', version='1.3.0')
 
-print(wms.identification.type)
+wms = WebMapService('https://ec.oceanbrowser.net/emodnet/Python/web/wms', version='1.3.0')
 
-print(wms.identification.version)
-print(wms.identification.title)
-print(wms.identification.abstract)
+#Chlorophyll Index
+#https://ec.oceanbrowser.net/emodnet/Python/web/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0
 
-print(wms.getfeatureinfo)
-print(wms.headers)
+#print(list(wms.contents)) #list all available datasets
+dataset = wms['All_European_Seas/Water_body_chlorophyll-a.nc*Water body chlorophyll-a_L2']
+
+print(dataset.boundingBoxWGS84)
+print([op.name for op in wms.operations])
+print(wms.getOperationByName('GetMap').methods)
+print(wms.getOperationByName('GetMap').formatOptions)
+print(dataset.crsOptionsa)
+print(dataset.styles)
+print(dataset.dimensions) #Get's time and Elevation 
+
+
+
+img = wms.getmap(   layers=['All_European_Seas/Water_body_chlorophyll-a.nc*Water body chlorophyll-a_L2'],
+                    styles=['contourf'],
+                    srs='EPSG:4326',
+                    bbox=(-45.0, 24.0, 70.0, 83.0),
+                    size=(300, 300),
+                    format='image/png',
+                    transparent=True
+                    )
+out = open('chlorophyll.png', 'wb')
+out.write(img.read())
+out.close()
