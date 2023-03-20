@@ -14,7 +14,7 @@ wms = WebMapService('https://ec.oceanbrowser.net/emodnet/Python/web/wms', versio
 #https://ec.oceanbrowser.net/emodnet/Python/web/wms?SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3.0
 
 #print(list(wms.contents)) #list all available datasets
-dataset = wms['All_European_Seas/Water_body_chlorophyll-a.nc*Water body chlorophyll-a_L2']
+dataset = wms['By_sea_regions/Baltic_Sea/Water_body_chlorophyll-a.4Danl.nc*Water body chlorophyll-a_L2']
 
 print(dataset.boundingBoxWGS84)
 print([op.name for op in wms.operations])
@@ -31,14 +31,16 @@ for keys,values in dataset.dimensions.items():
 
 
 
-img = wms.getmap(   layers=['All_European_Seas/Water_body_chlorophyll-a.nc*Water body chlorophyll-a_L2'],
+img = wms.getmap(   layers=['By_sea_regions/Baltic_Sea/Water_body_chlorophyll-a.4Danl.nc*Water body chlorophyll-a_L2'],
                     styles=['contourf'],
                     srs='EPSG:4326',
-                    bbox=(-45.0, 24.0, 70.0, 83.0),
+                    bbox=(9.4, 30.9, 53, 65.9),
                     size=(300, 300),
+                    time=('spring 2015'),
                     format='image/png',
                     transparent=True
                     )
-out = open('chlorophyll.png', 'wb')
+#out = open('spring_1982_chlorophyll_Baltic_Sea', 'wb')
+out = open('spring_2015_chlorophyll_Baltic_Sea.png', 'wb')
 out.write(img.read())
 out.close()
