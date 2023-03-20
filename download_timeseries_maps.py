@@ -60,3 +60,60 @@ for time in dataset.dimensions["time"]["values"]:
    out = open(out_file_path, 'wb')
    out.write(img.read())
    out.close()
+
+dataset = wms['By_sea_regions/Baltic_Sea/Water_body_phosphate.4Danl.nc*Water body phosphate_L2']
+for time in dataset.dimensions["time"]["values"]:
+   time_formatted = time.replace(" ","_")
+   out_file_path = f'timeseries/BalticSeaPhosphate/{time_formatted}.png'
+   if os.path.exists(out_file_path):
+      continue
+   img = wms.getmap(   layers=['By_sea_regions/Baltic_Sea/Water_body_phosphate.4Danl.nc*Water body phosphate_L2'],
+                       styles=['contourf'],
+                       srs='EPSG:4326',
+                       bbox=(9.4, 30.9, 53, 65.9),
+                       size=(300, 300),
+                       time=(time),
+                       format='image/png',
+                       transparent=True
+                    )
+   out = open(out_file_path, 'wb')
+   out.write(img.read())
+   out.close()
+
+dataset = wms['By_sea_regions/Baltic_Sea/Water_body_silicate.4Danl.nc*Water body silicate_L2']
+for time in dataset.dimensions["time"]["values"]:
+   time_formatted = time.replace(" ","_")
+   out_file_path = f'timeseries/BalticSeaSilicate/{time_formatted}.png'
+   if os.path.exists(out_file_path):
+      continue
+   img = wms.getmap(   layers=['By_sea_regions/Baltic_Sea/Water_body_silicate.4Danl.nc*Water body silicate_L2'],
+                       styles=['contourf'],
+                       srs='EPSG:4326',
+                       bbox=(9.4, 30.9, 53, 65.9),
+                       size=(300, 300),
+                       time=(time),
+                       format='image/png',
+                       transparent=True
+                    )
+   out = open(out_file_path, 'wb')
+   out.write(img.read())
+   out.close()
+
+dataset = wms['By_sea_regions/Baltic_Sea/Water_body_dissolved_inorganic_nitrogen_(DIN).4Danl.nc*Water body dissolved inorganic nitrogen (DIN)_L2']
+for time in dataset.dimensions["time"]["values"]:
+   time_formatted = time.replace(" ","_")
+   out_file_path = f'timeseries/BalticSeaNitrogen/{time_formatted}.png'
+   if os.path.exists(out_file_path):
+      continue
+   img = wms.getmap(   layers=['By_sea_regions/Baltic_Sea/Water_body_dissolved_inorganic_nitrogen_(DIN).4Danl.nc*Water body dissolved inorganic nitrogen (DIN)_L2'],
+                       styles=['contourf'],
+                       srs='EPSG:4326',
+                       bbox=(9.4, 30.9, 53, 65.9),
+                       size=(300, 300),
+                       time=(time),
+                       format='image/png',
+                       transparent=True
+                    )
+   out = open(out_file_path, 'wb')
+   out.write(img.read())
+   out.close()
