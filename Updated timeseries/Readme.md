@@ -1,4 +1,4 @@
-# Timelapse of Biomarkers in Baltic Sea
+# Timelapse of Biomarkers in Baltic Sea with labels
 
 | Season | Chlorophyll | Nitrogen | Oxygen | Phosphate | Silicate |
 | ------ | ----------- | -------- | ------ | --------- | -------- |
