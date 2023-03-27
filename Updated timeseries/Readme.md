@@ -2,7 +2,7 @@
 
 | Season | Chlorophyll | Nitrogen | Oxygen | Phosphate | Silicate |
 | ------ | ----------- | -------- | ------ | --------- | -------- |
-| Spring 1982 | <img src="BalticSeaChlorophyll/spring_1982.png" width="100"/> | <img src="BalticSeaNitrogen/spring_1982.png" width="100"/> | <img src="BalticSeaOxygen/spring_1982.png" width="100"/> | <img src="BalticSeaPhosphate/spring_1982.png" width="100"/> | <img src="BalticSeaSilicate/spring_1982.png" width="100"/> |
+| Spring 1982 | <img src="BalticSeaChlorophyll/spring_1982_final.png" width="100"/> | <img src="BalticSeaNitrogen/spring_1982.png" width="100"/> | <img src="BalticSeaOxygen/spring_1982.png" width="100"/> | <img src="BalticSeaPhosphate/spring_1982.png" width="100"/> | <img src="BalticSeaSilicate/spring_1982.png" width="100"/> |
 | Summer 1982 | <img src="BalticSeaChlorophyll/summer_1982.png" width="100"/> | <img src="BalticSeaNitrogen/summer_1982.png" width="100"/> | <img src="BalticSeaOxygen/summer_1982.png" width="100"/> | <img src="BalticSeaPhosphate/summer_1982.png" width="100"/> | <img src="BalticSeaSilicate/summer_1982.png" width="100"/> |
 | Autumn 1982 | <img src="BalticSeaChlorophyll/autumn_1982.png" width="100"/> | <img src="BalticSeaNitrogen/autumn_1982.png" width="100"/> | <img src="BalticSeaOxygen/autumn_1982.png" width="100"/> | <img src="BalticSeaPhosphate/autumn_1982.png" width="100"/> | <img src="BalticSeaSilicate/autumn_1982.png" width="100"/> |
 | Winter 1982 | <img src="BalticSeaChlorophyll/winter_1982.png" width="100"/> | <img src="BalticSeaNitrogen/winter_1982.png" width="100"/> | <img src="BalticSeaOxygen/winter_1982.png" width="100"/> | <img src="BalticSeaPhosphate/winter_1982.png" width="100"/> | <img src="BalticSeaSilicate/winter_1982.png" width="100"/> |
